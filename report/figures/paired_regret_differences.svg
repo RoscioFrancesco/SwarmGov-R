@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="640" viewBox="0 0 1180 640" role="img">
+<style>
+text{font-family:Inter,Arial,sans-serif;fill:#17202a}
+.title{font-size:22px;font-weight:700}
+.subtitle{font-size:13px;fill:#52606d}
+.tick{font-size:11px;fill:#3e4c59}
+.axis-label{font-size:12px;font-weight:600;fill:#243b53}
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="28" y="34" class="title">Paired Regret Differences</text><text x="28" y="56" class="subtitle">Target minus baseline; negative means target lower regret</text>
+<line x1="88" y1="470" x2="1146" y2="470" stroke="#1f2933" stroke-width="1.2"/><line x1="88" y1="74" x2="88" y2="470" stroke="#1f2933" stroke-width="1.2"/>
+<line x1="88" y1="369.22" x2="1146" y2="369.22" stroke="#5f6b7a" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="82" y1="470.00" x2="88" y2="470.00" stroke="#5f6b7a"/><text x="78" y="474.00" text-anchor="end" class="tick">-152.5</text>
+<line x1="82" y1="371.00" x2="88" y2="371.00" stroke="#5f6b7a"/><text x="78" y="375.00" text-anchor="end" class="tick">-2.69</text>
+<line x1="82" y1="272.00" x2="88" y2="272.00" stroke="#5f6b7a"/><text x="78" y="276.00" text-anchor="end" class="tick">147.1</text>
+<line x1="82" y1="173.00" x2="88" y2="173.00" stroke="#5f6b7a"/><text x="78" y="177.00" text-anchor="end" class="tick">297.0</text>
+<line x1="82" y1="74.00" x2="88" y2="74.00" stroke="#5f6b7a"/><text x="78" y="78.00" text-anchor="end" class="tick">446.8</text>
+<rect x="96.00" y="369.22" width="35.75" height="1.00" fill="#4c78a8" rx="2"/>
+<line x1="113.88" y1="435.75" x2="113.88" y2="434.92" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(113.88,488) rotate(58)" text-anchor="start" class="tick">clean_static_all_topologies / complete / ...</text>
+<rect x="139.75" y="369.22" width="35.75" height="1.00" fill="#f58518" rx="2"/>
+<line x1="157.62" y1="435.75" x2="157.62" y2="434.92" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(157.62,488) rotate(58)" text-anchor="start" class="tick">clean_static_all_topologies / ring / stat...</text>
+<rect x="183.50" y="369.22" width="35.75" height="1.00" fill="#54a24b" rx="2"/>
+<line x1="201.38" y1="435.71" x2="201.38" y2="434.93" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(201.38,488) rotate(58)" text-anchor="start" class="tick">clean_static_all_topologies / scale_free ...</text>
+<rect x="227.25" y="369.22" width="35.75" height="1.00" fill="#e45756" rx="2"/>
+<line x1="245.12" y1="435.72" x2="245.12" y2="434.93" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(245.12,488) rotate(58)" text-anchor="start" class="tick">clean_static_all_topologies / small_world...</text>
+<rect x="271.00" y="369.22" width="35.75" height="1.00" fill="#b279a2" rx="2"/>
+<line x1="288.88" y1="438.19" x2="288.88" y2="437.49" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(288.88,488) rotate(58)" text-anchor="start" class="tick">clean_static_all_topologies / complete / ...</text>
+<rect x="314.75" y="369.22" width="35.75" height="1.00" fill="#4c78a8" rx="2"/>
+<line x1="332.62" y1="393.77" x2="332.62" y2="392.69" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(332.62,488) rotate(58)" text-anchor="start" class="tick">clean_static_all_topologies / ring / stat...</text>
+<rect x="358.50" y="369.22" width="35.75" height="1.00" fill="#f58518" rx="2"/>
+<line x1="376.38" y1="393.17" x2="376.38" y2="391.03" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(376.38,488) rotate(58)" text-anchor="start" class="tick">clean_static_all_topologies / scale_free ...</text>
+<rect x="402.25" y="369.22" width="35.75" height="1.00" fill="#54a24b" rx="2"/>
+<line x1="420.12" y1="404.98" x2="420.12" y2="403.76" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(420.12,488) rotate(58)" text-anchor="start" class="tick">clean_static_all_topologies / small_world...</text>
+<rect x="446.00" y="369.22" width="35.75" height="1.00" fill="#e45756" rx="2"/>
+<line x1="463.88" y1="386.02" x2="463.88" y2="384.84" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(463.88,488) rotate(58)" text-anchor="start" class="tick">coordinated_static_random_and_degree / ri...</text>
+<rect x="489.75" y="369.22" width="35.75" height="1.00" fill="#b279a2" rx="2"/>
+<line x1="507.62" y1="391.23" x2="507.62" y2="389.27" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(507.62,488) rotate(58)" text-anchor="start" class="tick">coordinated_static_random_and_degree / ri...</text>
+<rect x="533.50" y="369.22" width="35.75" height="1.00" fill="#4c78a8" rx="2"/>
+<line x1="551.38" y1="387.45" x2="551.38" y2="384.39" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(551.38,488) rotate(58)" text-anchor="start" class="tick">coordinated_static_random_and_degree / sc...</text>
+<rect x="577.25" y="369.22" width="35.75" height="1.00" fill="#f58518" rx="2"/>
+<line x1="595.12" y1="392.19" x2="595.12" y2="389.61" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(595.12,488) rotate(58)" text-anchor="start" class="tick">coordinated_static_random_and_degree / sc...</text>
+<rect x="621.00" y="369.22" width="35.75" height="1.00" fill="#54a24b" rx="2"/>
+<line x1="638.88" y1="441.05" x2="638.88" y2="428.59" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(638.88,488) rotate(58)" text-anchor="start" class="tick">clean_static_all_topologies / complete / ...</text>
+<rect x="664.75" y="188.14" width="35.75" height="181.09" fill="#e45756" rx="2"/>
+<line x1="682.62" y1="199.45" x2="682.62" y2="176.22" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(682.62,488) rotate(58)" text-anchor="start" class="tick">clean_static_all_topologies / ring / stat...</text>
+<rect x="708.50" y="155.86" width="35.75" height="213.37" fill="#b279a2" rx="2"/>
+<line x1="726.38" y1="169.83" x2="726.38" y2="142.64" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(726.38,488) rotate(58)" text-anchor="start" class="tick">clean_static_all_topologies / scale_free ...</text>
+<rect x="752.25" y="240.78" width="35.75" height="128.44" fill="#4c78a8" rx="2"/>
+<line x1="770.12" y1="252.12" x2="770.12" y2="229.82" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(770.12,488) rotate(58)" text-anchor="start" class="tick">clean_static_all_topologies / small_world...</text>
+<rect x="796.00" y="184.74" width="35.75" height="184.48" fill="#f58518" rx="2"/>
+<line x1="813.88" y1="198.03" x2="813.88" y2="170.47" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(813.88,488) rotate(58)" text-anchor="start" class="tick">coordinated_static_random_and_degree / ri...</text>
+<rect x="839.75" y="170.58" width="35.75" height="198.64" fill="#54a24b" rx="2"/>
+<line x1="857.62" y1="183.15" x2="857.62" y2="158.36" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(857.62,488) rotate(58)" text-anchor="start" class="tick">coordinated_static_random_and_degree / ri...</text>
+<rect x="883.50" y="116.97" width="35.75" height="252.26" fill="#e45756" rx="2"/>
+<line x1="901.38" y1="131.76" x2="901.38" y2="101.31" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(901.38,488) rotate(58)" text-anchor="start" class="tick">coordinated_static_random_and_degree / sc...</text>
+<rect x="927.25" y="150.86" width="35.75" height="218.36" fill="#b279a2" rx="2"/>
+<line x1="945.12" y1="163.02" x2="945.12" y2="138.60" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(945.12,488) rotate(58)" text-anchor="start" class="tick">coordinated_static_random_and_degree / sc...</text>
+<rect x="971.00" y="369.22" width="35.75" height="1.00" fill="#4c78a8" rx="2"/>
+<line x1="988.88" y1="442.69" x2="988.88" y2="431.91" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(988.88,488) rotate(58)" text-anchor="start" class="tick">clean_static_all_topologies / complete / ...</text>
+<rect x="1014.75" y="305.36" width="35.75" height="63.86" fill="#f58518" rx="2"/>
+<line x1="1032.62" y1="313.29" x2="1032.62" y2="297.56" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(1032.62,488) rotate(58)" text-anchor="start" class="tick">clean_static_all_topologies / ring / stat...</text>
+<rect x="1058.50" y="259.84" width="35.75" height="109.38" fill="#54a24b" rx="2"/>
+<line x1="1076.38" y1="267.44" x2="1076.38" y2="252.42" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(1076.38,488) rotate(58)" text-anchor="start" class="tick">clean_static_all_topologies / scale_free ...</text>
+<rect x="1102.25" y="264.18" width="35.75" height="105.04" fill="#e45756" rx="2"/>
+<line x1="1120.12" y1="277.72" x2="1120.12" y2="251.20" stroke="#1f2933" stroke-width="1.3"/>
+<text transform="translate(1120.12,488) rotate(58)" text-anchor="start" class="tick">clean_static_all_topologies / small_world...</text>
+<text x="617.0" y="622" text-anchor="middle" class="axis-label">condition / algorithm</text>
+<text transform="translate(24,272.0) rotate(-90)" text-anchor="middle" class="axis-label">regret difference</text>
+</svg>

@@ -1,0 +1,69 @@
+name: milestone5-exploratory-pilot
+stage: stage_b
+description: >
+  Bounded exploratory technical pilot for Milestone 5 robust one-hop
+  aggregation. Results are not confirmatory evidence.
+
+seeds:
+  master: 20260825
+  run_seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+  streams:
+    - environment
+    - graph
+    - agents
+    - attack
+    - simulation
+    - analysis
+
+population:
+  agents: 10
+
+bandit:
+  arms: 3
+  arm_means: [0.75, 0.55, 0.35]
+  reward_family: bernoulli
+
+algorithm:
+  exploration_c: 1.41421356237
+
+communication:
+  interval: 1
+
+aggregations:
+  - independent
+  - mean
+  - median
+  - trimmed_mean
+
+trimmed_mean:
+  trim_count: 1
+  small_neighborhood_policy: median_fallback
+
+topologies:
+  complete:
+    family: complete
+    parameters: {}
+  ring:
+    family: ring
+    parameters: {}
+
+conditions:
+  clean:
+    byzantine_fraction: 0.0
+    byzantine_placement: none
+    attack:
+      strategy: no_attack
+      target_arm: null
+      inflated_mean: 1.0
+  coordinated_target:
+    byzantine_fraction: 0.2
+    byzantine_placement: random
+    attack:
+      strategy: coordinated_target
+      target_arm: 1
+      inflated_mean: 1.0
+
+experiment:
+  horizon: 200
+  output_dir: results/processed/milestone5-pilot
+  overwrite: true

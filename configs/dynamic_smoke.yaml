@@ -1,0 +1,66 @@
+name: smoke-dynamic-topology-clean
+stage: stage_a
+description: >
+  Sub-minute clean dynamic-topology run for validating one configured graph
+  rewiring event, event logging, connectivity checks, and recovery metrics.
+  This is technical validation, not scientific evidence.
+
+seeds:
+  master: 20260826
+  streams:
+    - environment
+    - graph
+    - agents
+    - attack
+    - simulation
+    - analysis
+
+population:
+  agents: 8
+  byzantine_fraction: 0.0
+  byzantine_placement: none
+
+bandit:
+  arms: 3
+  arm_means: [0.75, 0.55, 0.35]
+  reward_family: bernoulli
+
+algorithm:
+  name: one_hop_weighted_pooling_ucb1
+  parameters:
+    exploration_c: 1.41421356237
+
+graph:
+  family: small_world
+  parameters:
+    k: 2
+    p: 0.25
+
+communication:
+  interval: 1
+  enabled: true
+
+aggregation:
+  method: mean
+  trim_count: null
+  trim_fraction: null
+  small_neighborhood_policy: median_fallback
+  diagnostics: false
+
+attack:
+  strategy: no_attack
+  target_arm: null
+  inflated_mean: 1.0
+  diagnostics: false
+
+topology_change:
+  enabled: true
+  change_round: 30
+  rewire_fraction: 0.25
+  preserve_connectivity: true
+
+experiment:
+  horizon: 60
+  seeds: [0]
+  output_dir: results/raw/smoke-dynamic-topology-clean
+  overwrite: true

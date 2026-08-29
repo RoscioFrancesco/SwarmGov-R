@@ -1,0 +1,25 @@
+{
+  "generated_at_utc": "2026-08-28T18:44:16.578419+00:00",
+  "input_dir": "results/processed/confirmatory-m8",
+  "notes": "Figures are generated from statistical summaries only. Canary or partial inputs are technical validation artifacts, not final scientific evidence.",
+  "output_dir": "results/figures/confirmatory-m8",
+  "outputs": {
+    "communication": "results/figures/confirmatory-m8/communication_vs_regret.svg",
+    "curves": "results/figures/confirmatory-m8/mean_regret_curves.svg",
+    "fairness": "results/figures/confirmatory-m8/fairness_worst_decile.svg",
+    "final_regret": "results/figures/confirmatory-m8/final_regret_by_algorithm.svg",
+    "final_regret_table": "results/figures/confirmatory-m8/final_regret_table.csv",
+    "paired_differences": "results/figures/confirmatory-m8/paired_regret_differences.svg",
+    "paired_regret_table": "results/figures/confirmatory-m8/paired_regret_table.csv",
+    "report_tables": "results/figures/confirmatory-m8/report_tables.md",
+    "summary": "results/figures/confirmatory-m8/figure_summary.json"
+  },
+  "schema_version": "confirmatory_figures_v1",
+  "selected_curve_condition": "clean_static_all_topologies / complete / static / no_attack / none",
+  "source_rows": {
+    "condition_summary": 456,
+    "curve_summary": 228000,
+    "paired_summary": 290
+  },
+  "statistics_schema_version": "confirmatory_statistics_v1"
+}

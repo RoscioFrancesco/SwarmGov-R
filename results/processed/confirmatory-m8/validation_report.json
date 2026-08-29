@@ -1,0 +1,30 @@
+{
+  "compact_schema_version": "confirmatory_compact_v1",
+  "completed_records": 5700,
+  "counts": {
+    "duplicate_run_keys": 0,
+    "incompatible_records": 0,
+    "incomplete_expected_runs": 0,
+    "issues": 0,
+    "missing_records": 0,
+    "read_errors": 0,
+    "unexpected_files": 0
+  },
+  "duplicate_run_keys": [],
+  "expected_runs": 5700,
+  "failed_expected_run_keys": [],
+  "failed_records": 0,
+  "generated_at_utc": "2026-08-28T18:31:42.741522+00:00",
+  "group_kind": "primary",
+  "incomplete_run_keys": [],
+  "issues": [],
+  "manifest_name": "confirmatory-m8-primary-and-sensitivity",
+  "manifest_path": "experiments/manifests/confirmatory_m8_manifest.json",
+  "max_runs": null,
+  "max_seeds": null,
+  "missing_run_keys": [],
+  "output_dir": "results/raw/confirmatory-m8",
+  "run_groups": null,
+  "status": "passed",
+  "valid_completed_runs": 5700
+}

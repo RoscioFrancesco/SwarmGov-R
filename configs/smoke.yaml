@@ -1,0 +1,65 @@
+name: smoke-one-hop-weighted-pooling-clean
+stage: stage_a
+description: >
+  Sub-minute clean multi-agent run for validating static graph generation,
+  typed messages, communication metrics, and one-hop weighted pooling UCB.
+
+seeds:
+  master: 20260825
+  streams:
+    - environment
+    - graph
+    - agents
+    - attack
+    - simulation
+    - analysis
+
+population:
+  agents: 5
+  byzantine_fraction: 0.0
+  byzantine_placement: none
+
+bandit:
+  arms: 3
+  arm_means: [0.75, 0.55, 0.35]
+  reward_family: bernoulli
+
+algorithm:
+  name: one_hop_weighted_pooling_ucb1
+  parameters:
+    exploration_c: 1.41421356237
+
+graph:
+  family: small_world
+  parameters:
+    k: 2
+    p: 0.25
+
+communication:
+  interval: 1
+  enabled: true
+
+aggregation:
+  method: mean
+  trim_count: null
+  trim_fraction: null
+  small_neighborhood_policy: median_fallback
+  diagnostics: false
+
+attack:
+  strategy: no_attack
+  target_arm: null
+  inflated_mean: 1.0
+  diagnostics: false
+
+topology_change:
+  enabled: false
+  change_round: null
+  rewire_fraction: 0.0
+  preserve_connectivity: true
+
+experiment:
+  horizon: 50
+  seeds: [0]
+  output_dir: results/raw/smoke-one-hop-weighted-pooling-clean
+  overwrite: false

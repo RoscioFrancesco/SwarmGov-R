@@ -1,0 +1,65 @@
+name: smoke-one-hop-weighted-pooling-attacked
+stage: stage_a
+description: >
+  Sub-minute technical validation run with one Byzantine node corrupting
+  outgoing one-hop weighted pooling messages. This is not scientific evidence.
+
+seeds:
+  master: 20260825
+  streams:
+    - environment
+    - graph
+    - agents
+    - attack
+    - simulation
+    - analysis
+
+population:
+  agents: 5
+  byzantine_fraction: 0.2
+  byzantine_placement: degree_centrality
+
+bandit:
+  arms: 3
+  arm_means: [0.75, 0.55, 0.35]
+  reward_family: bernoulli
+
+algorithm:
+  name: one_hop_weighted_pooling_ucb1
+  parameters:
+    exploration_c: 1.41421356237
+
+graph:
+  family: small_world
+  parameters:
+    k: 2
+    p: 0.25
+
+communication:
+  interval: 1
+  enabled: true
+
+aggregation:
+  method: mean
+  trim_count: null
+  trim_fraction: null
+  small_neighborhood_policy: median_fallback
+  diagnostics: false
+
+attack:
+  strategy: coordinated_target
+  target_arm: 1
+  inflated_mean: 1.0
+  diagnostics: true
+
+topology_change:
+  enabled: false
+  change_round: null
+  rewire_fraction: 0.0
+  preserve_connectivity: true
+
+experiment:
+  horizon: 30
+  seeds: [0]
+  output_dir: results/raw/smoke-one-hop-weighted-pooling-attacked
+  overwrite: false

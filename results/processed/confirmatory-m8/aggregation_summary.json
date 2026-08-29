@@ -1,0 +1,29 @@
+{
+  "compact_schema_version": "confirmatory_compact_v1",
+  "generated_at_utc": "2026-08-28T18:36:02.629395+00:00",
+  "group_kind": "primary",
+  "input_dir": "results/raw/confirmatory-m8",
+  "manifest_name": "confirmatory-m8-primary-and-sensitivity",
+  "manifest_path": "experiments/manifests/confirmatory_m8_manifest.json",
+  "max_runs": null,
+  "max_seeds": null,
+  "notes": "These processed tables are aggregation inputs only. Scientific claims require the later confidence-interval/statistical step.",
+  "output_dir": "results/processed/confirmatory-m8",
+  "outputs": {
+    "paired_differences": "results/processed/confirmatory-m8/paired_differences.csv",
+    "per_agent_regret": "results/processed/confirmatory-m8/per_agent_regret.csv",
+    "regret_curves": "results/processed/confirmatory-m8/regret_curves.csv",
+    "run_metrics": "results/processed/confirmatory-m8/run_metrics.csv",
+    "summary": "results/processed/confirmatory-m8/aggregation_summary.json"
+  },
+  "row_counts": {
+    "paired_differences": 5800,
+    "per_agent_regret": 128500,
+    "regret_curves": 11400000,
+    "run_metrics": 5700
+  },
+  "run_groups": null,
+  "schema_version": "confirmatory_aggregate_v1",
+  "validation_report": "results/processed/confirmatory-m8/validation_report.json",
+  "validation_status": "passed"
+}

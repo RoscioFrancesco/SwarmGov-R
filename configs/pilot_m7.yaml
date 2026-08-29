@@ -1,0 +1,95 @@
+name: milestone7-exploratory-pilot
+stage: stage_b
+description: >
+  Bounded exploratory technical pilot for Milestone 7. It checks the static
+  versus dynamic topology pipeline, robust one-hop aggregation, attacker
+  placement, runtime, and figure-generation path. Results are not
+  confirmatory evidence.
+
+seeds:
+  master: 20260826
+  run_seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+  streams:
+    - environment
+    - graph
+    - agents
+    - attack
+    - simulation
+    - analysis
+
+population:
+  agents: 10
+
+bandit:
+  arms: 5
+  arm_means: [0.75, 0.65, 0.6, 0.35, 0.25]
+  reward_family: bernoulli
+
+algorithm:
+  exploration_c: 1.41421356237
+
+communication:
+  interval: 1
+
+aggregations:
+  - mean
+  - median
+  - trimmed_mean
+
+include_independent_baseline: true
+
+trimmed_mean:
+  trim_count: 1
+  small_neighborhood_policy: median_fallback
+
+topology_modes:
+  - static
+  - dynamic
+
+dynamic_topology:
+  change_round: 60
+  rewire_fraction: 0.2
+  preserve_connectivity: true
+
+topologies:
+  ring:
+    family: ring
+    parameters: {}
+  small_world:
+    family: small_world
+    parameters:
+      k: 4
+      p: 0.2
+  scale_free:
+    family: scale_free
+    parameters:
+      m: 2
+
+conditions:
+  clean:
+    byzantine_fraction: 0.0
+    byzantine_placement: none
+    attack:
+      strategy: no_attack
+      target_arm: null
+      inflated_mean: 1.0
+  coordinated_random:
+    byzantine_fraction: 0.2
+    byzantine_placement: random
+    attack:
+      strategy: coordinated_target
+      target_arm: 3
+      inflated_mean: 1.0
+  coordinated_degree:
+    byzantine_fraction: 0.2
+    byzantine_placement: degree_centrality
+    attack:
+      strategy: coordinated_target
+      target_arm: 3
+      inflated_mean: 1.0
+
+experiment:
+  horizon: 120
+  output_dir: results/processed/milestone7-pilot
+  figure_dir: results/figures/milestone7-pilot
+  overwrite: true

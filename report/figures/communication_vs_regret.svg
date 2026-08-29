@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="620" viewBox="0 0 980 620" role="img">
+<style>
+text{font-family:Inter,Arial,sans-serif;fill:#17202a}
+.title{font-size:22px;font-weight:700}
+.subtitle{font-size:13px;fill:#52606d}
+.tick{font-size:11px;fill:#3e4c59}
+.axis-label{font-size:12px;font-weight:600;fill:#243b53}
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="28" y="34" class="title">Communication Cost Versus Regret</text><text x="28" y="56" class="subtitle">Condition means; x=messages sent, y=mean regret</text>
+<line x1="88" y1="528" x2="946" y2="528" stroke="#1f2933" stroke-width="1.2"/><line x1="88" y1="74" x2="88" y2="528" stroke="#1f2933" stroke-width="1.2"/>
+<text x="88.00" y="552" text-anchor="middle" class="tick">0.00</text>
+<text x="302.50" y="552" text-anchor="middle" class="tick">324,000</text>
+<text x="517.00" y="552" text-anchor="middle" class="tick">648,000</text>
+<text x="731.50" y="552" text-anchor="middle" class="tick">972,000</text>
+<text x="946.00" y="552" text-anchor="middle" class="tick">1,296,000</text>
+<text x="78" y="532.00" text-anchor="end" class="tick">0.00</text>
+<text x="78" y="418.50" text-anchor="end" class="tick">134.1</text>
+<text x="78" y="305.00" text-anchor="end" class="tick">268.2</text>
+<text x="78" y="191.50" text-anchor="end" class="tick">402.2</text>
+<text x="78" y="78.00" text-anchor="end" class="tick">536.3</text>
+<circle cx="154.20" cy="461.94" r="6" fill="#f58518" stroke="#1f2933" stroke-width="0.7"><title>clean_dynamic_communication_topologies / ring / dynamic / no_attack / none / mean</title></circle>
+<circle cx="154.20" cy="217.21" r="6" fill="#54a24b" stroke="#1f2933" stroke-width="0.7"><title>clean_dynamic_communication_topologies / ring / dynamic / no_attack / none / median</title></circle>
+<circle cx="154.20" cy="324.85" r="6" fill="#b279a2" stroke="#1f2933" stroke-width="0.7"><title>clean_dynamic_communication_topologies / ring / dynamic / no_attack / none / trimmed_mean</title></circle>
+<circle cx="209.81" cy="461.88" r="6" fill="#f58518" stroke="#1f2933" stroke-width="0.7"><title>clean_dynamic_communication_topologies / scale_free / dynamic / no_attack / none / mean</title></circle>
+<circle cx="209.81" cy="179.74" r="6" fill="#54a24b" stroke="#1f2933" stroke-width="0.7"><title>clean_dynamic_communication_topologies / scale_free / dynamic / no_attack / none / median</title></circle>
+<circle cx="209.81" cy="267.19" r="6" fill="#b279a2" stroke="#1f2933" stroke-width="0.7"><title>clean_dynamic_communication_topologies / scale_free / dynamic / no_attack / none / trimmed_mean</title></circle>
+<circle cx="220.41" cy="473.74" r="6" fill="#f58518" stroke="#1f2933" stroke-width="0.7"><title>clean_dynamic_communication_topologies / small_world / dynamic / no_attack / none / mean</title></circle>
+<circle cx="220.41" cy="278.75" r="6" fill="#54a24b" stroke="#1f2933" stroke-width="0.7"><title>clean_dynamic_communication_topologies / small_world / dynamic / no_attack / none / median</title></circle>
+<circle cx="220.41" cy="318.64" r="6" fill="#b279a2" stroke="#1f2933" stroke-width="0.7"><title>clean_dynamic_communication_topologies / small_world / dynamic / no_attack / none / trimmed_mean</title></circle>
+<circle cx="88.00" cy="515.55" r="6" fill="#72b7b2" stroke="#1f2933" stroke-width="0.7"><title>clean_static_all_topologies / complete / static / no_attack / none / centralized_clean_reference</title></circle>
+<circle cx="88.00" cy="430.88" r="6" fill="#4c78a8" stroke="#1f2933" stroke-width="0.7"><title>clean_static_all_topologies / complete / static / no_attack / none / independent</title></circle>
+<circle cx="882.44" cy="518.79" r="6" fill="#f58518" stroke="#1f2933" stroke-width="0.7"><title>clean_static_all_topologies / complete / static / no_attack / none / mean</title></circle>
+<circle cx="882.44" cy="515.78" r="6" fill="#54a24b" stroke="#1f2933" stroke-width="0.7"><title>clean_static_all_topologies / complete / static / no_attack / none / median</title></circle>
+<circle cx="882.44" cy="518.33" r="6" fill="#b279a2" stroke="#1f2933" stroke-width="0.7"><title>clean_static_all_topologies / complete / static / no_attack / none / trimmed_mean</title></circle>
+<circle cx="88.00" cy="515.55" r="6" fill="#72b7b2" stroke="#1f2933" stroke-width="0.7"><title>clean_static_all_topologies / ring / static / no_attack / none / centralized_clean_reference</title></circle>
+<circle cx="88.00" cy="430.88" r="6" fill="#4c78a8" stroke="#1f2933" stroke-width="0.7"><title>clean_static_all_topologies / ring / static / no_attack / none / independent</title></circle>
+<circle cx="154.20" cy="461.62" r="6" fill="#f58518" stroke="#1f2933" stroke-width="0.7"><title>clean_static_all_topologies / ring / static / no_attack / none / mean</title></circle>
+<circle cx="154.20" cy="198.88" r="6" fill="#54a24b" stroke="#1f2933" stroke-width="0.7"><title>clean_static_all_topologies / ring / static / no_attack / none / median</title></circle>
+<circle cx="154.20" cy="349.06" r="6" fill="#b279a2" stroke="#1f2933" stroke-width="0.7"><title>clean_static_all_topologies / ring / static / no_attack / none / trimmed_mean</title></circle>
+<circle cx="88.00" cy="515.55" r="6" fill="#72b7b2" stroke="#1f2933" stroke-width="0.7"><title>clean_static_all_topologies / scale_free / static / no_attack / none / centralized_clean_reference</title></circle>
+<circle cx="88.00" cy="430.88" r="6" fill="#4c78a8" stroke="#1f2933" stroke-width="0.7"><title>clean_static_all_topologies / scale_free / static / no_attack / none / independent</title></circle>
+<circle cx="209.81" cy="460.16" r="6" fill="#f58518" stroke="#1f2933" stroke-width="0.7"><title>clean_static_all_topologies / scale_free / static / no_attack / none / mean</title></circle>
+<circle cx="209.81" cy="157.53" r="6" fill="#54a24b" stroke="#1f2933" stroke-width="0.7"><title>clean_static_all_topologies / scale_free / static / no_attack / none / median</title></circle>
+<circle cx="209.81" cy="290.74" r="6" fill="#b279a2" stroke="#1f2933" stroke-width="0.7"><title>clean_static_all_topologies / scale_free / static / no_attack / none / trimmed_mean</title></circle>
+<circle cx="88.00" cy="515.55" r="6" fill="#72b7b2" stroke="#1f2933" stroke-width="0.7"><title>clean_static_all_topologies / small_world / static / no_attack / none / centralized_clean_reference</title></circle>
+<circle cx="88.00" cy="430.88" r="6" fill="#4c78a8" stroke="#1f2933" stroke-width="0.7"><title>clean_static_all_topologies / small_world / static / no_attack / none / independent</title></circle>
+<circle cx="220.41" cy="475.93" r="6" fill="#f58518" stroke="#1f2933" stroke-width="0.7"><title>clean_static_all_topologies / small_world / static / no_attack / none / mean</title></circle>
+<circle cx="220.41" cy="266.33" r="6" fill="#54a24b" stroke="#1f2933" stroke-width="0.7"><title>clean_static_all_topologies / small_world / static / no_attack / none / median</title></circle>
+<circle cx="220.41" cy="296.31" r="6" fill="#b279a2" stroke="#1f2933" stroke-width="0.7"><title>clean_static_all_topologies / small_world / static / no_attack / none / trimmed_mean</title></circle>
+<circle cx="154.20" cy="449.10" r="6" fill="#f58518" stroke="#1f2933" stroke-width="0.7"><title>coordinated_dynamic_random_and_degree / ring / dynamic / coordinated_target / degree_centrality / mean</title></circle>
+<circle cx="154.20" cy="457.66" r="6" fill="#f58518" stroke="#1f2933" stroke-width="0.7"><title>coordinated_dynamic_random_and_degree / ring / dynamic / coordinated_target / random / mean</title></circle>
+<circle cx="154.20" cy="212.39" r="6" fill="#54a24b" stroke="#1f2933" stroke-width="0.7"><title>coordinated_dynamic_random_and_degree / ring / dynamic / coordinated_target / degree_centrality / median</title></circle>
+<circle cx="154.20" cy="198.12" r="6" fill="#54a24b" stroke="#1f2933" stroke-width="0.7"><title>coordinated_dynamic_random_and_degree / ring / dynamic / coordinated_target / random / median</title></circle>
+<circle cx="154.20" cy="320.23" r="6" fill="#b279a2" stroke="#1f2933" stroke-width="0.7"><title>coordinated_dynamic_random_and_degree / ring / dynamic / coordinated_target / degree_centrality / trimmed_mean</title></circle>
+<circle cx="154.20" cy="310.32" r="6" fill="#b279a2" stroke="#1f2933" stroke-width="0.7"><title>coordinated_dynamic_random_and_degree / ring / dynamic / coordinated_target / random / trimmed_mean</title></circle>
+<circle cx="209.81" cy="453.91" r="6" fill="#f58518" stroke="#1f2933" stroke-width="0.7"><title>coordinated_dynamic_random_and_degree / scale_free / dynamic / coordinated_target / degree_centrality / mean</title></circle>
+<circle cx="209.81" cy="459.51" r="6" fill="#f58518" stroke="#1f2933" stroke-width="0.7"><title>coordinated_dynamic_random_and_degree / scale_free / dynamic / coordinated_target / random / mean</title></circle>
+<circle cx="209.81" cy="144.09" r="6" fill="#54a24b" stroke="#1f2933" stroke-width="0.7"><title>coordinated_dynamic_random_and_degree / scale_free / dynamic / coordinated_target / degree_centrality / median</title></circle>
+<circle cx="209.81" cy="172.84" r="6" fill="#54a24b" stroke="#1f2933" stroke-width="0.7"><title>coordinated_dynamic_random_and_degree / scale_free / dynamic / coordinated_target / random / median</title></circle>
+<circle cx="209.81" cy="256.99" r="6" fill="#b279a2" stroke="#1f2933" stroke-width="0.7"><title>coordinated_dynamic_random_and_degree / scale_free / dynamic / coordinated_target / degree_centrality / trimmed_mean</title></circle>
+<circle cx="209.81" cy="247.00" r="6" fill="#b279a2" stroke="#1f2933" stroke-width="0.7"><title>coordinated_dynamic_random_and_degree / scale_free / dynamic / coordinated_target / random / trimmed_mean</title></circle>
+<circle cx="88.00" cy="430.91" r="6" fill="#4c78a8" stroke="#1f2933" stroke-width="0.7"><title>coordinated_static_random_and_degree / ring / static / coordinated_target / degree_centrality / independent</title></circle>
+<circle cx="88.00" cy="430.76" r="6" fill="#4c78a8" stroke="#1f2933" stroke-width="0.7"><title>coordinated_static_random_and_degree / ring / static / coordinated_target / random / independent</title></circle>
+<circle cx="154.20" cy="451.68" r="6" fill="#f58518" stroke="#1f2933" stroke-width="0.7"><title>coordinated_static_random_and_degree / ring / static / coordinated_target / degree_centrality / mean</title></circle>
+<circle cx="154.20" cy="457.73" r="6" fill="#f58518" stroke="#1f2933" stroke-width="0.7"><title>coordinated_static_random_and_degree / ring / static / coordinated_target / random / mean</title></circle>
+<circle cx="154.20" cy="194.56" r="6" fill="#54a24b" stroke="#1f2933" stroke-width="0.7"><title>coordinated_static_random_and_degree / ring / static / coordinated_target / degree_centrality / median</title></circle>
+<circle cx="154.20" cy="176.27" r="6" fill="#54a24b" stroke="#1f2933" stroke-width="0.7"><title>coordinated_static_random_and_degree / ring / static / coordinated_target / random / median</title></circle>
+<circle cx="154.20" cy="341.53" r="6" fill="#b279a2" stroke="#1f2933" stroke-width="0.7"><title>coordinated_static_random_and_degree / ring / static / coordinated_target / degree_centrality / trimmed_mean</title></circle>
+<circle cx="154.20" cy="330.97" r="6" fill="#b279a2" stroke="#1f2933" stroke-width="0.7"><title>coordinated_static_random_and_degree / ring / static / coordinated_target / random / trimmed_mean</title></circle>
+<circle cx="88.00" cy="430.81" r="6" fill="#4c78a8" stroke="#1f2933" stroke-width="0.7"><title>coordinated_static_random_and_degree / scale_free / static / coordinated_target / degree_centrality / independent</title></circle>
+<circle cx="88.00" cy="430.76" r="6" fill="#4c78a8" stroke="#1f2933" stroke-width="0.7"><title>coordinated_static_random_and_degree / scale_free / static / coordinated_target / random / independent</title></circle>
+<circle cx="209.81" cy="452.25" r="6" fill="#f58518" stroke="#1f2933" stroke-width="0.7"><title>coordinated_static_random_and_degree / scale_free / static / coordinated_target / degree_centrality / mean</title></circle>
+<circle cx="209.81" cy="458.50" r="6" fill="#f58518" stroke="#1f2933" stroke-width="0.7"><title>coordinated_static_random_and_degree / scale_free / static / coordinated_target / random / mean</title></circle>
+<circle cx="209.81" cy="107.63" r="6" fill="#54a24b" stroke="#1f2933" stroke-width="0.7"><title>coordinated_static_random_and_degree / scale_free / static / coordinated_target / degree_centrality / median</title></circle>
+<circle cx="209.81" cy="151.01" r="6" fill="#54a24b" stroke="#1f2933" stroke-width="0.7"><title>coordinated_static_random_and_degree / scale_free / static / coordinated_target / random / median</title></circle>
+<circle cx="209.81" cy="280.23" r="6" fill="#b279a2" stroke="#1f2933" stroke-width="0.7"><title>coordinated_static_random_and_degree / scale_free / static / coordinated_target / degree_centrality / trimmed_mean</title></circle>
+<circle cx="209.81" cy="269.38" r="6" fill="#b279a2" stroke="#1f2933" stroke-width="0.7"><title>coordinated_static_random_and_degree / scale_free / static / coordinated_target / random / trimmed_mean</title></circle>
+<text x="517.0" y="596" text-anchor="middle" class="axis-label">messages sent</text>
+<text transform="translate(24,301.0) rotate(-90)" text-anchor="middle" class="axis-label">mean regret</text>
+</svg>

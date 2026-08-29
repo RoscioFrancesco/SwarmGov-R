@@ -1,0 +1,161 @@
+{
+  "manifest_name": "confirmatory-m8-primary-and-sensitivity",
+  "status": "planned_not_executed",
+  "created_on": "2026-08-26",
+  "stage": "stage_c",
+  "analysis_plan": "docs/experiment-plan.md",
+  "pilot_source": "configs/pilot_m7.yaml",
+  "confirmatory_results_present": false,
+  "master_seed": 20260826,
+  "run_seeds": {
+    "type": "inclusive_range",
+    "start": 1000,
+    "end": 1099,
+    "count": 100
+  },
+  "shared_seed_policy": "Each algorithm compared inside a condition uses the same run seed set and the same named component stream contract. No seed may be removed after execution starts unless the failure is logged.",
+  "fixed_hyperparameters": {
+    "agents": 25,
+    "arms": 5,
+    "horizon": 2000,
+    "arm_means_easy_gap": [0.75, 0.65, 0.6, 0.35, 0.25],
+    "reward_family": "bernoulli",
+    "exploration_c": 1.41421356237,
+    "communication_interval": 1,
+    "trimmed_mean": {
+      "trim_count": 1,
+      "trim_fraction": null,
+      "small_neighborhood_policy": "median_fallback"
+    },
+    "dynamic_topology": {
+      "change_round": 1000,
+      "rewire_fraction": 0.2,
+      "preserve_connectivity": true
+    },
+    "recovery_metric": {
+      "baseline_window": 5,
+      "recovery_window": 5,
+      "tolerance": 0.05
+    }
+  },
+  "topology_parameters": {
+    "complete": {
+      "family": "complete",
+      "parameters": {}
+    },
+    "ring": {
+      "family": "ring",
+      "parameters": {}
+    },
+    "small_world": {
+      "family": "small_world",
+      "parameters": {
+        "k": 4,
+        "p": 0.1
+      }
+    },
+    "scale_free": {
+      "family": "scale_free",
+      "parameters": {
+        "m": 2
+      }
+    }
+  },
+  "algorithm_labels": {
+    "independent": "independent_ucb1",
+    "centralized_clean_reference": "centralized_pooled_shared_action_ucb1",
+    "mean": "one_hop_weighted_pooling_ucb1 with aggregation.method=mean",
+    "median": "one_hop_weighted_pooling_ucb1 with aggregation.method=median",
+    "trimmed_mean": "one_hop_weighted_pooling_ucb1 with aggregation.method=trimmed_mean"
+  },
+  "primary_run_groups": [
+    {
+      "name": "clean_static_all_topologies",
+      "topologies": ["complete", "ring", "small_world", "scale_free"],
+      "topology_mode": "static",
+      "algorithms": ["independent", "centralized_clean_reference", "mean", "median", "trimmed_mean"],
+      "attack": {
+        "strategy": "no_attack",
+        "byzantine_fraction": 0.0,
+        "placement": "none",
+        "target_arm": null,
+        "inflated_mean": 1.0
+      },
+      "seed_count": 100,
+      "planned_runs": 2000
+    },
+    {
+      "name": "clean_dynamic_communication_topologies",
+      "topologies": ["ring", "small_world", "scale_free"],
+      "topology_mode": "dynamic",
+      "algorithms": ["mean", "median", "trimmed_mean"],
+      "attack": {
+        "strategy": "no_attack",
+        "byzantine_fraction": 0.0,
+        "placement": "none",
+        "target_arm": null,
+        "inflated_mean": 1.0
+      },
+      "seed_count": 100,
+      "planned_runs": 900
+    },
+    {
+      "name": "coordinated_static_random_and_degree",
+      "topologies": ["ring", "scale_free"],
+      "topology_mode": "static",
+      "algorithms": ["independent", "mean", "median", "trimmed_mean"],
+      "attack": {
+        "strategy": "coordinated_target",
+        "byzantine_fraction": 0.2,
+        "placements": ["random", "degree_centrality"],
+        "target_arm": 3,
+        "inflated_mean": 1.0
+      },
+      "seed_count": 100,
+      "planned_runs": 1600
+    },
+    {
+      "name": "coordinated_dynamic_random_and_degree",
+      "topologies": ["ring", "scale_free"],
+      "topology_mode": "dynamic",
+      "algorithms": ["mean", "median", "trimmed_mean"],
+      "attack": {
+        "strategy": "coordinated_target",
+        "byzantine_fraction": 0.2,
+        "placements": ["random", "degree_centrality"],
+        "target_arm": 3,
+        "inflated_mean": 1.0
+      },
+      "seed_count": 100,
+      "planned_runs": 1200
+    }
+  ],
+  "sensitivity_run_groups": [
+    {
+      "name": "constant_inflation_static_random",
+      "topologies": ["ring", "scale_free"],
+      "topology_mode": "static",
+      "algorithms": ["independent", "mean", "median", "trimmed_mean"],
+      "attack": {
+        "strategy": "constant_inflation",
+        "byzantine_fraction": 0.2,
+        "placement": "random",
+        "target_arm": 3,
+        "inflated_mean": 1.0
+      },
+      "seed_count": 100,
+      "planned_runs": 800
+    }
+  ],
+  "run_count_estimate": {
+    "primary_planned_runs": 5700,
+    "sensitivity_planned_runs": 800,
+    "total_planned_runs": 6500
+  },
+  "excluded_or_deferred": [
+    "Dynamic complete-graph rewiring is excluded because the fixed-edge-count process has no absent edges to add.",
+    "Independent UCB is run only as a static no-communication baseline because dynamic topology has no communication channel to affect.",
+    "Centralized pooled shared-action UCB1 is run only as a clean static reference; it is not an attacked oracle.",
+    "Adaptive attacks, reputation weighting, median variants beyond per-source median, trimmed-mean tuning, and frontend work are deferred."
+  ]
+}

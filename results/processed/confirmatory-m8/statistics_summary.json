@@ -1,0 +1,27 @@
+{
+  "aggregation_schema_version": "confirmatory_aggregate_v1",
+  "bootstrap_iterations": 2000,
+  "bootstrap_seed": 20260827,
+  "ci_policy": {
+    "condition_summary": "normal_approximation_across_seeds",
+    "curve_summary": "normal_approximation_across_seeds_per_round",
+    "paired_summary": "deterministic_paired_percentile_bootstrap",
+    "single_seed": "degenerate_ci_equal_to_observed_mean"
+  },
+  "generated_at_utc": "2026-08-28T18:43:42.724483+00:00",
+  "input_dir": "results/processed/confirmatory-m8",
+  "notes": "Rounds are summarized per stored round across seeds, not treated as independent replicates. Canary or partial summaries are technical validation only.",
+  "output_dir": "results/processed/confirmatory-m8",
+  "outputs": {
+    "condition_summary": "results/processed/confirmatory-m8/condition_summary.csv",
+    "curve_summary": "results/processed/confirmatory-m8/curve_summary.csv",
+    "paired_summary": "results/processed/confirmatory-m8/paired_summary.csv",
+    "summary": "results/processed/confirmatory-m8/statistics_summary.json"
+  },
+  "row_counts": {
+    "condition_summary": 456,
+    "curve_summary": 228000,
+    "paired_summary": 290
+  },
+  "schema_version": "confirmatory_statistics_v1"
+}
