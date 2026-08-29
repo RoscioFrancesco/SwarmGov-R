@@ -131,8 +131,13 @@ python3 -m pip install -e ".[dev]"
 ## Checks
 
 ```bash
-python3 -m pytest
-ruff check .
+python3 -m ruff check .
+python3 -m mypy src/swarmgov
+python3 -m coverage run -m pytest
+python3 -m coverage report --show-missing --fail-under=0
+python3 experiments/scripts/run_confirmatory_canary_pipeline.py \
+  --output-root /tmp/swarmgov-ci-canary \
+  --max-runs 2
 ```
 
 ## Smoke Config Validation
@@ -412,15 +417,15 @@ The completed primary confirmatory results are versioned as:
 ```text
 artifact_version: v0.1.0-m8-primary
 package_version: 0.1.0
-source_commit: 5d5f3640d175f0abaa95dfdb6df9274e71e1dfba
+source_commit: recorded in ARTIFACT_MANIFEST.json
 manifest_status: completed_primary
 confirmatory_results_present: true
 ```
 
 The raw records were generated before this workspace had a Git history, so the
 per-run provenance does not contain a source commit hash. The public GitHub
-Release for `v0.1.0-m8-primary` binds the archived artifacts to source commit
-`5d5f3640d175f0abaa95dfdb6df9274e71e1dfba` and SHA-256 checksums.
+Release for `v0.1.0-m8-primary` binds the archived artifacts to the source
+commit recorded in `ARTIFACT_MANIFEST.json` and to SHA-256 checksums.
 
 External readers can regenerate processed tables and figures without rerunning
 the 5700 simulations by downloading the release artifacts and following
@@ -431,12 +436,11 @@ Release assets:
 
 ## License And Citation
 
-No open-source license has been selected yet. Treat the repository as
-all-rights-reserved until the project owner chooses a license.
+This repository is distributed under the MIT License.
 
 Suggested citation while the project is a draft:
 
 ```text
-Francesco Rosciori. SwarmGov-R: Robust Collective Learning under
+Francesco Roscio Ricon. SwarmGov-R: Robust Collective Learning under
 Misinformation. Research project draft, 2026.
 ```

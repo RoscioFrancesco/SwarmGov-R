@@ -595,27 +595,21 @@ implementation assumptions, or reproducibility.
   benchmark and bounded negative finding. It does not claim novelty,
   theoretical regret guarantees, real-world misinformation safety, adaptive
   attack robustness, arbitrary-message Byzantine robustness, or support from
-  unexecuted sensitivity/hard-gap experiments. The repository license remains
-  pending owner selection and is documented conservatively as all-rights
-  reserved.
+  unexecuted sensitivity/hard-gap experiments. The repository is distributed
+  under the MIT License.
 
-## 2026-08-29 - Public Documentation Without Internal Agent Instructions
+## 2026-08-29 - Public Documentation Entry Points
 
-- Decision: make the public repository understandable without publishing
-  internal coding-agent instructions by adding `docs/project-overview.md`,
-  linking it from the README, and removing decision-log wording that depended
-  on an internal planning guide.
-- Rationale: internal coding-agent instructions are not part of the intended
-  public project documentation. A
-  GitHub reader should be able to understand the research question, model,
-  algorithms, attacks, metrics, results, limitations, and reproduction path
-  from public project documents alone.
+- Decision: make the public repository understandable from public project
+  documents by adding `docs/project-overview.md`, linking it from the README,
+  and removing wording that depended on private planning notes.
+- Rationale: a GitHub reader should be able to understand the research
+  question, model, algorithms, attacks, metrics, results, limitations, and
+  reproduction path from public project documents alone.
 - Consequence: the intended public entry points are `README.md`,
   `docs/project-overview.md`, `report/paper.md`,
   `docs/confirmatory-results.md`, `docs/limitations.md`,
   `docs/experiment-plan.md`, `docs/metrics.md`, and `docs/threat-model.md`.
-  Internal agent instructions can be omitted from GitHub without removing the
-  information needed by an external reader.
 
 ## 2026-08-29 - Public Artifact Reproducibility Package
 
@@ -629,3 +623,20 @@ implementation assumptions, or reproducibility.
   commit and should be published as release or Zenodo assets under artifact
   version `v0.1.0-m8-primary`. The primary scientific grid, seed set, metrics,
   algorithms, threat model, and statistical protocol are unchanged.
+
+## 2026-08-29 - Public Repository Reproducibility Cleanup
+
+- Decision: publish a repository `.gitignore`, switch the project license to
+  MIT, correct the author name to Francesco Roscio Ricon, add automated
+  `mypy` and coverage-report checks to CI, and regenerate release checksums
+  with asset basenames only.
+- Rationale: external readers should be able to install, test, verify, and
+  reuse the project without relying on local machine state or ambiguous
+  artifact instructions.
+- Consequence: the scientific protocol and saved primary results are
+  unchanged. The release artifact is kept compact by excluding the largest
+  derived table, `regret_curves.csv`, because it is deterministically
+  regenerable from the archived raw records. Raw per-run records still cannot
+  contain the original generation commit because the confirmatory sweep was run
+  before public Git history was initialized; the release manifest records the
+  archival source commit instead.

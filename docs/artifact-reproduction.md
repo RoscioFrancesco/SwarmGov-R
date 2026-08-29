@@ -34,6 +34,7 @@ It includes:
 
 ```text
 swarmgov-r-m8-primary-artifacts-v0.1.0-m8-primary.tar.gz
+ARTIFACT_MANIFEST.json
 SHA256SUMS.txt
 ```
 
@@ -41,24 +42,31 @@ The artifact archive contains:
 
 ```text
 experiments/manifests/confirmatory_m8_manifest.json
+docs/artifact-reproduction.md
+requirements-lock.txt
 results/raw/confirmatory-m8/
-results/processed/confirmatory-m8/
+selected results/processed/confirmatory-m8/ tables
 results/figures/confirmatory-m8/
 ```
 
 The raw directory contains the 5700 primary run records plus pipeline metadata.
-The processed directory contains intermediate and summary tables. The figures
+The processed payload contains intermediate and summary tables needed for
+inspection and figure regeneration, excluding the very large
+`regret_curves.csv` table. That table is deterministic and can be regenerated
+from the archived raw records by the aggregation command below. The figures
 directory contains regenerated SVG figures and compact report tables.
 
 ## Verify Checksums
 
-After downloading the release assets into one directory, run:
+After downloading the release assets into one directory, run the checksum
+command from that directory:
 
 ```bash
 shasum -a 256 -c SHA256SUMS.txt
 ```
 
-The command should report `OK` for every listed file.
+The checksum file lists asset basenames only. The command should report `OK`
+for every listed file.
 
 ## Restore Artifacts
 
@@ -69,8 +77,8 @@ tar -xzf swarmgov-r-m8-primary-artifacts-v0.1.0-m8-primary.tar.gz
 ```
 
 This restores the `results/raw/confirmatory-m8/`,
-`results/processed/confirmatory-m8/`, and `results/figures/confirmatory-m8/`
-trees expected by the scripts.
+selected `results/processed/confirmatory-m8/` tables, and
+`results/figures/confirmatory-m8/` trees expected by the scripts.
 
 ## Install Dependencies
 

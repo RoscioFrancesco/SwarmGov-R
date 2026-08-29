@@ -59,7 +59,9 @@ class AggregationResult:
 class Aggregator(Protocol):
     """Stateless one-hop aggregation interface."""
 
-    method: str
+    @property
+    def method(self) -> str:
+        """Stable aggregation method identifier used in records."""
 
     def aggregate(
         self,

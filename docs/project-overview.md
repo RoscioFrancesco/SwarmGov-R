@@ -2,7 +2,7 @@
 
 Status: public overview for external readers, created on 2026-08-29.
 
-This document explains the project without relying on any internal agent guide.
+This document explains the project without relying on private planning notes.
 It is the best first stop after the README for a reader who wants to understand
 what the simulator does and what the completed results mean.
 

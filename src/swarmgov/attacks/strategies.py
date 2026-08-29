@@ -24,7 +24,9 @@ class AttackContext:
 class AttackStrategy(Protocol):
     """Interface for message-level Byzantine corruption."""
 
-    name: str
+    @property
+    def name(self) -> str:
+        """Stable strategy identifier used in records and diagnostics."""
 
     def corrupt(self, message: Message, context: AttackContext) -> Message:
         """Return the message received by neighbors."""

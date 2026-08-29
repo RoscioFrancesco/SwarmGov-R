@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import platform
 import sys
+from collections.abc import Mapping
 from dataclasses import asdict, dataclass
 from datetime import UTC, datetime
 from importlib import metadata
@@ -46,7 +47,7 @@ from swarmgov.messages import Message
 from swarmgov.metrics.communication import summarize_communication
 from swarmgov.metrics.recovery import summarize_recovery_time
 from swarmgov.metrics.regret import summarize_population_regret, summarize_regret
-from swarmgov.seeds import derive_run_component_seeds
+from swarmgov.seeds import ComponentSeed, derive_run_component_seeds
 
 
 class SimulationError(ValueError):
@@ -313,7 +314,7 @@ def _run_decentralized_agents(
     graph: GeneratedGraph,
     graph_rng: np.random.Generator,
     reward_table: np.ndarray,
-    component_seeds: dict[str, object],
+    component_seeds: Mapping[str, ComponentSeed],
     honest_nodes: tuple[int, ...],
     byzantine_nodes: tuple[int, ...],
     aggregator: Aggregator,
@@ -460,7 +461,7 @@ def _run_centralized_pooled_shared_action(
     graph: GeneratedGraph,
     reward_table: np.ndarray,
     topology_event: TopologyChangeEvent | None,
-    component_seeds: dict[str, object],
+    component_seeds: Mapping[str, ComponentSeed],
     honest_nodes: tuple[int, ...],
     byzantine_nodes: tuple[int, ...],
 ) -> MultiAgentRunResult:
@@ -594,7 +595,7 @@ def _build_multi_result(
     agent_states: tuple[dict[str, object], ...],
     messages: tuple[Message, ...],
     attack_diagnostics: tuple[AttackDiagnostic, ...],
-    aggregation_summary: dict[str, object],
+    aggregation_summary: dict[str, int],
     aggregation_diagnostics: tuple[dict[str, object], ...],
 ) -> MultiAgentRunResult:
     environment = BernoulliBanditEnvironment.from_means(config.bandit.arm_means)
@@ -615,6 +616,9 @@ def _build_multi_result(
     run_id = (
         f"{config.name}_{config.algorithm.name}_{config.graph.family}_seed-{run_seed}"
     )
+    aggregation_summary_record: dict[str, object] = {
+        key: value for key, value in aggregation_summary.items()
+    }
     return MultiAgentRunResult(
         run_id=run_id,
         algorithm=config.algorithm.name,
@@ -643,7 +647,7 @@ def _build_multi_result(
         attack_diagnostics=tuple(
             diagnostic.to_record() for diagnostic in attack_diagnostics
         ),
-        aggregation_summary=aggregation_summary,
+        aggregation_summary=aggregation_summary_record,
         aggregation_diagnostics=aggregation_diagnostics,
     )
 
@@ -695,7 +699,7 @@ def _select_byzantine_nodes(
     *,
     config: StudyConfig,
     graph: GeneratedGraph,
-    component_seeds: dict[str, object],
+    component_seeds: Mapping[str, ComponentSeed],
 ) -> tuple[int, ...]:
     if config.population.byzantine_fraction == 0.0:
         return ()
@@ -828,7 +832,7 @@ def _aggregation_record(config: StudyConfig) -> dict[str, object]:
     }
 
 
-def _empty_aggregation_summary() -> dict[str, object]:
+def _empty_aggregation_summary() -> dict[str, int]:
     return {
         "aggregation_events": 0,
         "arm_aggregation_events": 0,
@@ -839,7 +843,7 @@ def _empty_aggregation_summary() -> dict[str, object]:
 
 
 def _update_aggregation_summary(
-    summary: dict[str, object],
+    summary: dict[str, int],
     diagnostics_by_receiver: dict[int, AggregationDiagnostics],
 ) -> None:
     for diagnostic in diagnostics_by_receiver.values():
@@ -875,7 +879,7 @@ def _select_actions_for_nodes(
 
 
 def _require_streams(
-    component_seeds: dict[str, object],
+    component_seeds: Mapping[str, ComponentSeed],
     stream_names: tuple[str, ...],
 ) -> None:
     missing = [name for name in stream_names if name not in component_seeds]
@@ -884,7 +888,7 @@ def _require_streams(
 
 
 def _agent_rngs(
-    component_seeds: dict[str, object],
+    component_seeds: Mapping[str, ComponentSeed],
     num_agents: int,
 ) -> tuple[np.random.Generator, ...]:
     children = component_seeds["agents"].seed_sequence().spawn(num_agents)
@@ -925,7 +929,7 @@ def _write_single_agent_result(
     *,
     result: SingleAgentRunResult,
     config: StudyConfig,
-    component_seeds: dict[str, object],
+    component_seeds: Mapping[str, ComponentSeed],
     output_path: Path,
     runtime_seconds: float,
 ) -> None:
@@ -957,7 +961,7 @@ def _write_result_record(
     *,
     result: SingleAgentRunResult | MultiAgentRunResult,
     config: StudyConfig,
-    component_seeds: dict[str, object],
+    component_seeds: Mapping[str, ComponentSeed],
     output_path: Path,
     runtime_seconds: float,
 ) -> None:

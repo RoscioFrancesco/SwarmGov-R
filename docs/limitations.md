@@ -121,9 +121,18 @@ Raw confirmatory records and processed curve tables are large and are ignored
 by Git. Reproduction requires rerunning the manifest or preserving the local
 `results/` directory.
 
+The downloadable release archive is intentionally compact: it includes the raw
+records, summary tables, figure-ready tables, figures, manifest, lockfile, and
+reproduction instructions, but excludes the largest derived table
+`regret_curves.csv`. That table can be regenerated from raw records without
+rerunning simulations.
+
 The current figure generator is intentionally simple and standard-library
 based. It produces reproducible SVGs, but it is not a full interactive
 dashboard.
 
-The repository is not currently a Git repository in this workspace, so local
-Git commit hashes were not available during final result generation.
+The raw records were generated before public Git history was initialized, so
+their per-run metadata does not contain the original generation commit. The
+release manifest records the archival source commit used for public
+reproduction. The public history is compact and begins with a large initial
+snapshot of local work rather than a granular development sequence.

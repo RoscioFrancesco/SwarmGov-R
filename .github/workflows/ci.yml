@@ -25,8 +25,13 @@ jobs:
       - name: Ruff
         run: python -m ruff check .
 
-      - name: Pytest
-        run: python -m pytest
+      - name: Type check
+        run: python -m mypy src/swarmgov
+
+      - name: Pytest with coverage
+        run: |
+          python -m coverage run -m pytest
+          python -m coverage report --show-missing --fail-under=0
 
       - name: Confirmatory canary pipeline
         run: |
