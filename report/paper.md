@@ -483,25 +483,39 @@ before aggregation, and tests for core simulation invariants.
 
 ## 10. Conclusion
 
-SwarmGov-R's completed primary experiments show that clean one-hop mean
-communication can substantially reduce average regret compared with
-independent UCB. They also show that controlled Byzantine messages do damage
-mean pooling, especially when attackers occupy high-degree nodes. However, the
-simple robust alternatives implemented here, one-hop median and one-hop
-trimmed mean, do not provide a successful defense in the tested coordinated
-attack conditions. Dynamic topology matters, but its effect is not monotonic.
+SwarmGov-R's completed primary experiments show that, in the tested clean
+settings, one-hop mean communication can substantially reduce average regret
+relative to independent UCB. Under the controlled Byzantine value-corruption
+model, mean pooling degrades, with larger effects when Byzantine agents occupy
+high-degree nodes. However, the one-hop median and trimmed-mean variants
+implemented in this benchmark do not provide an effective defense under the
+tested coordinated attacks: they do not consistently recover clean-setting
+performance and can perform poorly even without attackers in sparse
+topologies. Dynamic topology also affects performance, but its impact is not
+monotonic across the tested configurations.
 
-The safest conclusion is not that collaboration is always good or that robust
-aggregation is solved. The evidence supports a narrower claim: in this
+The evidence therefore supports a deliberately narrow conclusion. Within this
 controlled decentralized bandit benchmark, ordinary one-hop mean pooling is
-surprisingly strong on average, naive one-hop robust aggregation is not enough,
-attacker placement matters, and fairness metrics reveal risks hidden by
-population averages.
+surprisingly effective on average in clean conditions, naive one-hop robust
+aggregation is insufficient against the tested attacks, attacker placement
+materially affects outcomes, and fairness-oriented metrics reveal risks that
+population averages can conceal.
 
-Future work should evaluate stronger resilient decentralized bandit algorithms,
-arbitrary-message and adaptive attacks, hard-gap reward settings, additional
-Byzantine fractions, communication-frequency ablations, and richer dynamic
-topology processes before making broader robustness claims.
+These findings are empirical rather than theoretical guarantees and are
+limited to the threat model, bandit instance, graph families, horizon,
+Byzantine fractions, and topology changes included in the experimental design.
+They do not establish that collaboration is always beneficial, that median or
+trimmed-mean aggregation is generally ineffective, or that Byzantine-robust
+decentralized learning has been solved.
+
+Future work should implement and reproduce a faithful Byzantine-resilient
+decentralized bandit baseline, such as Byzantine-Resilient UCB or DeMABAR, and
+compare it with the current heuristics through controlled ablations. Further
+evaluation should include arbitrary-message and adaptive attacks, manipulation
+of reported counts, hard-gap reward settings, additional Byzantine fractions,
+local Byzantine and node-degree diagnostics, communication-frequency ablations,
+and richer dynamic-topology processes before broader robustness claims are
+made.
 
 ## References
 
