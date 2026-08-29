@@ -21,6 +21,41 @@ Under which combinations of communication topology, Byzantine fraction, and
 graph change does robust decentralized aggregation outperform both ordinary
 one-hop weighted pooling and independent learning?
 
+## Answer To The Research Question
+
+In the completed primary confirmatory grid, robust decentralized aggregation
+does **not** outperform ordinary one-hop mean pooling. One-hop count-weighted
+mean pooling has the lowest final mean honest-agent regret point estimate
+among deployable methods in all 15 primary condition slices.
+
+The main finding is therefore negative but useful: simple one-hop median and
+trimmed-mean aggregation are not sufficient Byzantine defenses under the tested
+controlled message-corruption model.
+
+## Relation To Prior Work
+
+SwarmGov-R is best described as a reproducible stress test that combines ideas
+from several research lines rather than as a direct reproduction of one single
+paper.
+
+The single-agent baseline follows UCB1 from Auer, Cesa-Bianchi, and Fischer,
+“Finite-time Analysis of the Multiarmed Bandit Problem” (2002). The
+decentralized learning setup is closest in spirit to cooperative/decentralized
+bandit work such as Szorenyi et al., “Gossip-based Distributed Stochastic
+Bandit Algorithms” (2013), Landgren, Srivastava, and Leonard, “Distributed
+Cooperative Decision Making in Multi-agent Multi-armed Bandits” (2021), and
+Martinez-Rubio, Kanade, and Rebeschini, “Decentralized Cooperative Stochastic
+Bandits” (2019).
+
+The Byzantine-robust motivation is related to Zhu et al.,
+“Byzantine-Resilient Decentralized Multi-Armed Bandits” (2024), and Hu, Wang,
+and Chen, “Robust Decentralized Multi-armed Bandits: From
+Corruption-Resilience to Byzantine-Resilience” (2026). SwarmGov-R does not
+reimplement those full algorithms. Instead, it asks a narrower empirical
+question: whether simple one-hop median and trimmed-mean aggregation are
+already enough to protect decentralized UCB-style agents under controlled
+Byzantine message corruption. In the completed primary grid, they are not.
+
 ## Experiment Flow
 
 ```text
