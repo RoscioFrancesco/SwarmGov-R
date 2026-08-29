@@ -640,3 +640,17 @@ implementation assumptions, or reproducibility.
   contain the original generation commit because the confirmatory sweep was run
   before public Git history was initialized; the release manifest records the
   archival source commit instead.
+
+## 2026-08-29 - Public Positioning And v0.2 Roadmap
+
+- Decision: add a README project-status section, replace the main public
+  conclusion with a narrower evidence-bounded statement, and create
+  `ROADMAP.md` separating completed `v0.1` work from planned `v0.2` work.
+- Rationale: external readers should quickly understand that the current
+  repository is a reproducible empirical benchmark with documented negative
+  results, not a published paper or a new Byzantine-resilient algorithm.
+- Consequence: no algorithms, raw data, processed results, figures, tables,
+  release assets, or experimental conclusions were changed. The planned
+  `v0.2` scope is explicitly limited to a future faithful literature baseline,
+  broader threat model, diagnostics, ablations, pilot, confirmatory protocol,
+  and separate release.

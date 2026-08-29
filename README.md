@@ -15,6 +15,19 @@ Adaptive attacks, arbitrary-message Byzantine attacks, reputation weighting,
 the constant-inflation sensitivity grid, and hard-gap confirmatory experiments
 are not completed yet.
 
+## Project Status
+
+The current version is a reproducible empirical benchmark. It analyzes simple
+one-hop aggregation rules under a controlled form of Byzantine value
+corruption and documents both measured benefits and failure modes.
+
+The project does not yet propose a new Byzantine-resilient decentralized
+bandit algorithm. The planned `v0.2` line will compare the current heuristics
+against a faithful baseline from the Byzantine-resilient decentralized bandit
+literature.
+
+Roadmap: `ROADMAP.md`.
+
 ## Research Question
 
 Under which combinations of communication topology, Byzantine fraction, and
@@ -23,14 +36,39 @@ one-hop weighted pooling and independent learning?
 
 ## Answer To The Research Question
 
-In the completed primary confirmatory grid, robust decentralized aggregation
-does **not** outperform ordinary one-hop mean pooling. One-hop count-weighted
-mean pooling has the lowest final mean honest-agent regret point estimate
-among deployable methods in all 15 primary condition slices.
+SwarmGov-R's completed primary experiments show that, in the tested clean
+settings, one-hop mean communication can substantially reduce average regret
+relative to independent UCB. Under the controlled Byzantine value-corruption
+model, mean pooling degrades, with larger effects when Byzantine agents occupy
+high-degree nodes. However, the one-hop median and trimmed-mean variants
+implemented in this benchmark do not provide an effective defense under the
+tested coordinated attacks: they do not consistently recover clean-setting
+performance and can perform poorly even without attackers in sparse
+topologies. Dynamic topology also affects performance, but its impact is not
+monotonic across the tested configurations.
 
-The main finding is therefore negative but useful: simple one-hop median and
-trimmed-mean aggregation are not sufficient Byzantine defenses under the tested
-controlled message-corruption model.
+The evidence therefore supports a deliberately narrow conclusion. Within this
+controlled decentralized bandit benchmark, ordinary one-hop mean pooling is
+surprisingly effective on average in clean conditions, naive one-hop robust
+aggregation is insufficient against the tested attacks, attacker placement
+materially affects outcomes, and fairness-oriented metrics reveal risks that
+population averages can conceal.
+
+These findings are empirical rather than theoretical guarantees and are
+limited to the threat model, bandit instance, graph families, horizon,
+Byzantine fractions, and topology changes included in the experimental design.
+They do not establish that collaboration is always beneficial, that median or
+trimmed-mean aggregation is generally ineffective, or that Byzantine-robust
+decentralized learning has been solved.
+
+Future work should implement and reproduce a faithful Byzantine-resilient
+decentralized bandit baseline, such as Byzantine-Resilient UCB or DeMABAR, and
+compare it with the current heuristics through controlled ablations. Further
+evaluation should include arbitrary-message and adaptive attacks, manipulation
+of reported counts, hard-gap reward settings, additional Byzantine fractions,
+local Byzantine and node-degree diagnostics, communication-frequency ablations,
+and richer dynamic-topology processes before broader robustness claims are
+made.
 
 ## Relation To Prior Work
 
@@ -99,6 +137,7 @@ Report draft: `report/paper.md`.
 Application material: `report/application-material.md`.
 Plain-language project overview: `docs/project-overview.md`.
 Artifact reproduction instructions: `docs/artifact-reproduction.md`.
+Roadmap: `ROADMAP.md`.
 
 ## Algorithms And Attacks
 
