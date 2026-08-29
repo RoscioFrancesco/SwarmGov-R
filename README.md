@@ -426,6 +426,9 @@ External readers can regenerate processed tables and figures without rerunning
 the 5700 simulations by downloading the release artifacts and following
 `docs/artifact-reproduction.md`.
 
+Release assets:
+`https://github.com/RoscioFrancesco/SwarmGov-R/releases/tag/v0.1.0-m8-primary`
+
 ## License And Citation
 
 No open-source license has been selected yet. Treat the repository as

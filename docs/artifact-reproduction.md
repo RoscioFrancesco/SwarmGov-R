@@ -24,7 +24,13 @@ artifact bundle.
 
 ## Release Assets
 
-The intended GitHub Release or Zenodo record should include:
+The GitHub Release is:
+
+```text
+https://github.com/RoscioFrancesco/SwarmGov-R/releases/tag/v0.1.0-m8-primary
+```
+
+It includes:
 
 ```text
 swarmgov-r-m8-primary-artifacts-v0.1.0-m8-primary.tar.gz
