@@ -1,11 +1,20 @@
 {
   "manifest_name": "confirmatory-m8-primary-and-sensitivity",
-  "status": "planned_not_executed",
+  "status": "completed_primary",
   "created_on": "2026-08-26",
   "stage": "stage_c",
   "analysis_plan": "docs/experiment-plan.md",
   "pilot_source": "configs/pilot_m7.yaml",
-  "confirmatory_results_present": false,
+  "confirmatory_results_present": true,
+  "completed_primary_results": {
+    "completed_runs": 5700,
+    "failed_runs": 0,
+    "raw_records_dir": "results/raw/confirmatory-m8",
+    "processed_tables_dir": "results/processed/confirmatory-m8",
+    "figures_dir": "results/figures/confirmatory-m8",
+    "validation_report": "results/processed/confirmatory-m8/validation_report.json",
+    "artifact_version": "v0.1.0-m8-primary"
+  },
   "master_seed": 20260826,
   "run_seeds": {
     "type": "inclusive_range",

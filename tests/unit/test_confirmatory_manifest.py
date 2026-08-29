@@ -51,8 +51,10 @@ def test_confirmatory_manifest_excludes_invalid_baseline_combinations() -> None:
             assert group["attack"]["target_arm"] == 3
             assert group["attack"]["byzantine_fraction"] == 0.2
 
-    assert manifest["confirmatory_results_present"] is False
-    assert manifest["status"] == "planned_not_executed"
+    assert manifest["confirmatory_results_present"] is True
+    assert manifest["status"] == "completed_primary"
+    assert manifest["completed_primary_results"]["completed_runs"] == 5700
+    assert manifest["completed_primary_results"]["failed_runs"] == 0
 
 
 def _group_run_count(group: dict[str, object], seed_count: int) -> int:

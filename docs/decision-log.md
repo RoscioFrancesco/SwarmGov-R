@@ -616,3 +616,16 @@ implementation assumptions, or reproducibility.
   `docs/experiment-plan.md`, `docs/metrics.md`, and `docs/threat-model.md`.
   Internal agent instructions can be omitted from GitHub without removing the
   information needed by an external reader.
+
+## 2026-08-29 - Public Artifact Reproducibility Package
+
+- Decision: mark the confirmatory manifest as `completed_primary`, add
+  `confirmatory_results_present: true`, add a locked dependency file, add a
+  GitHub Actions CI workflow, and document release-artifact reproduction.
+- Rationale: an external reader should be able to download archived raw
+  records and derived tables, verify checksums, and regenerate processed
+  tables and SVG figures without repeating the 5700-run simulation sweep.
+- Consequence: raw records and large intermediate tables remain outside the Git
+  commit and should be published as release or Zenodo assets under artifact
+  version `v0.1.0-m8-primary`. The primary scientific grid, seed set, metrics,
+  algorithms, threat model, and statistical protocol are unchanged.

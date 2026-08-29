@@ -98,6 +98,7 @@ Limitations and threats to validity: `docs/limitations.md`.
 Report draft: `report/paper.md`.
 Application material: `report/application-material.md`.
 Plain-language project overview: `docs/project-overview.md`.
+Artifact reproduction instructions: `docs/artifact-reproduction.md`.
 
 ## Algorithms And Attacks
 
@@ -403,6 +404,26 @@ results/processed/confirmatory-m8/validation_report.json
 
 It records `5700` expected runs, `5700` completed runs, and `0` failed,
 missing, duplicated, or incompatible records.
+
+## Result Artifact Version
+
+The completed primary confirmatory results are versioned as:
+
+```text
+artifact_version: v0.1.0-m8-primary
+package_version: 0.1.0
+manifest_status: completed_primary
+confirmatory_results_present: true
+```
+
+The raw records were generated before this workspace had a Git history, so the
+per-run provenance does not contain a source commit hash. The public GitHub
+Release or Zenodo record for `v0.1.0-m8-primary` is the archival binding
+between source, downloadable artifacts, and SHA-256 checksums.
+
+External readers can regenerate processed tables and figures without rerunning
+the 5700 simulations by downloading the release artifacts and following
+`docs/artifact-reproduction.md`.
 
 ## License And Citation
 
